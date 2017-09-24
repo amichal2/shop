@@ -1,3 +1,3 @@
 # Shop app with Angular and Webpack
 
-<a href="abc">demo</a>
+<a href="https://amichal2.github.io/shop/abc">demo</a>
