@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var AotPlugin = require('@ngtools/webpack').AotPlugin;
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
@@ -18,12 +19,13 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        loaders: [
-          {
-            loader: 'awesome-typescript-loader',
-            options: { configFileName: helpers.root('src', 'tsconfig.json') }
-          } , 'angular2-template-loader'
-        ]
+        loader: '@ngtools/webpack'
+        // loaders: [
+        //   {
+        //     loader: 'awesome-typescript-loader',
+        //     options: { configFileName: helpers.root('src', 'tsconfig.json') }
+        //   } , 'angular2-template-loader'
+        // ]
       },
       {
         test: /\.html$/,
@@ -61,6 +63,11 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+
+    new AotPlugin({
+      tsConfigPath: helpers.root('./src/tsconfig.json'),
+      entryModule: helpers.root('./src/app/app.module#AppModule')
     })
   ]
 };
