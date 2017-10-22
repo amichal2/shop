@@ -1,5 +1,9 @@
 <main>
-  <h1>Hello from Angular 4 App with Webpack</h1>
-
+  <h1>{{title}} app</h1>
   <img src="../assets/images/angular.png">
 </main>
+<nav>
+  <a routerLink="/inventory" routerLinkActive="active">Inventory</a>
+  <a routerLink="/order" routerLinkActive="active">Order</a>
+</nav>
+<router-outlet></router-outlet>
