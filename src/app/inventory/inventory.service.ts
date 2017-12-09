@@ -3,9 +3,7 @@ import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-export class Item {
-  constructor(public id: number, public name: string) { }
-}
+import { Item } from './inventory.model';
 
 const ITEMS = [
   new Item(11, 'a'),

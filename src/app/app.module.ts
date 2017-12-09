@@ -1,5 +1,6 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }     from './app.component';
 import { InventoryModule }  from './inventory/inventory.module';
@@ -12,7 +13,8 @@ import { OrderComponent }         from './order/order.component';
   imports: [
     BrowserModule,
     InventoryModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
